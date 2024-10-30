@@ -1,9 +1,19 @@
 .contact {
   margin-top: 60px;
+  @media (max-width: 1300px) {
+    margin-top: 40px;
+  }
+  @include r($lg) {
+    margin-top: 10px;
+  }
 
   &__title {
     text-align: center;
     margin-bottom: 48px;
+    @include r($sm) {
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
   }
 
   &__form {
@@ -22,5 +32,9 @@
     padding: 12px 16px;
     border-radius: 12px;
     font-size: 16px;
+    @include r($phone) {
+      font-size: 14px;
+      margin-top: -10px;
+    }
   }
 }

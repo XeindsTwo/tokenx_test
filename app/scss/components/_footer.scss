@@ -1,17 +1,40 @@
 .footer {
   padding-bottom: 45px;
+  @media (max-width: 1300px) {
+    padding-bottom: 30px;
+  }
+  @include r($desktop) {
+    padding-bottom: 20px;
+  }
 
   &__inner {
     @include flex-between-center-gap(30);
+    @media (max-width: 1160px) {
+      flex-wrap: wrap;
+    }
+    @include r($phone) {
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 
   &__left, &__right {
     max-width: 215px;
     width: 100%;
+    @include r($tablet) {
+      max-width: max-content;
+    }
   }
 
   &__left {
     @include flex-align-center(16);
+  }
+
+  &__nav {
+    @media (max-width: 1160px) {
+      width: 100%;
+      order: 1;
+    }
   }
 
   &__logo {
@@ -70,6 +93,14 @@
 
   &__list {
     @include flex-align-center(24);
+    @include r($tablet) {
+      flex-wrap: wrap;
+      gap: 18px 24px;
+    }
+    @include r($phone) {
+      justify-content: center;
+      margin-top: -5px;
+    }
   }
 
   &__link {
@@ -117,6 +148,9 @@
     font-weight: 500;
     max-width: max-content;
     transition: color .4s;
+    @include r($tablet) {
+      font-size: 15px;
+    }
 
     &:hover {
       color: rgba($white, .7);

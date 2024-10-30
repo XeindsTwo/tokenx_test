@@ -1,11 +1,25 @@
 .whitepaper {
   &__title {
-    font-weight: 700;
-    color: $white;
-    font-size: 52px;
-    line-height: 1.1;
     margin-bottom: 40px;
-    letter-spacing: -1.04px;
+    font-weight: 700;
+    @media (max-width: 1100px) {
+      font-size: 48px;
+    }
+    @include r($lg) {
+      font-size: 44px;
+    }
+    @include r($tablet) {
+      font-size: 40px;
+    }
+    @include r($sm) {
+      font-size: 38px;
+    }
+    @include r($phone) {
+      font-size: 36px;
+    }
+    @media (max-width: 390px) {
+      font-size: 34px;
+    }
   }
 
   &__inner {
@@ -20,6 +34,9 @@
 
   &__item {
     @include flex-column(16);
+    @media (max-width: 530px) {
+      gap: 12px;
+    }
 
     &-text {
       @include flex-column(16);
@@ -32,11 +49,27 @@
     line-height: 1.2;
     font-size: 32px;
     letter-spacing: -0.64px;
+    @media (max-width: 1100px) {
+      font-size: 30px;
+    }
+    @include r($lg) {
+      font-size: 26px;
+    }
+    @include r($tablet) {
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    @include r($phone) {
+      font-size: 22px;
+    }
   }
 
   p {
     font-weight: 500;
     line-height: 1.56;
+    @include r($phone) {
+      line-height: 1.46;
+    }
 
     span {
       color: $white;
