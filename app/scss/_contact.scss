@@ -1,0 +1,26 @@
+.contact {
+  margin-top: 60px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__form {
+    max-width: 370px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,98 @@
+.roadmap {
+  &__top {
+    max-width: 420px;
+    text-align: center;
+    margin: 0 auto 70px;
+  }
+
+  &__subtext {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.16px;
+    color: rgba($white, .8);
+  }
+
+  &__list {
+    @include flex-column(0);
+    max-width: 625px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    @include flex-between(30);
+    padding-bottom: 40px;
+    position: relative;
+
+    &:not(:last-child) {
+      &::before {
+        @include pseudo;
+        height: 100%;
+        width: 1px;
+        left: 3px;
+        background-color: rgba($white, .15);
+      }
+    }
+
+    &:first-child {
+      &::before {
+        top: 8px;
+        height: 94%;
+      }
+    }
+
+    &:nth-child(5)::before {
+      height: 108%;
+    }
+  }
+
+  &__left {
+    @include flex-align-center(10);
+    align-self: flex-start;
+    max-width: 140px;
+    width: 100%;
+
+    &::before {
+      content: "";
+      display: flex;
+      border-radius: 50%;
+      background-color: $accent;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    color: $white;
+    font-weight: 600;
+    display: flex;
+    max-width: max-content;
+    align-self: flex-start;
+
+    &.here {
+      padding: 7px 12px;
+      border-radius: 12px;
+      background-color: $accent;
+      color: #11111D;
+    }
+  }
+
+  &__plans {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-width: 430px;
+  }
+
+  &__plan {
+    @include flex-align-center(10);
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba($white, .15);
+    font-size: 16px;
+    color: $white;
+  }
+}

@@ -10,10 +10,13 @@
 @import "components/header";
 @import "components/top";
 @import "components/title-section";
+@import "components/form-elements";
+@import "components/modal";
 
 @import "home/home";
-@import "home/about";
+@import "home/roadmap";
 @import "home/ecosystem";
 @import "home/faq";
 
 @import "whitepaper";
+@import "contact";

@@ -44,6 +44,7 @@
   }
 
   &__img {
+    @include objectCoverBg;
     width: 100%;
   }
 }

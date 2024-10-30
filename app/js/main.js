@@ -42,63 +42,20 @@ for (const anchor of anchors) {
   anchor.addEventListener('touchstart', handleAnchorClick, {passive: true});
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const faqButtons = document.querySelectorAll('[data-faq-btn]');
-  const faqBodies = document.querySelectorAll('.faq__body');
+document.querySelectorAll(".desktop").forEach(link => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault(); // Отключаем стандартный якорный переход
 
-  if (faqBodies.length === 0) {
-    console.error("Error: The expected '.faq__body' element was not found.");
-    return;
-  }
+    const targetId = link.getAttribute("href").slice(1); // Получаем ID целевой секции
+    const targetSection = document.getElementById(targetId);
 
-  faqBodies.forEach(faqBody => {
-    if (faqBody.classList.contains('faq__body--active')) {
-      updateTabIndexes(faqBody, false);
-      faqBody.style.maxHeight = faqBody.scrollHeight + 'px';
-    } else {
-      updateTabIndexes(faqBody, true);
+    if (targetSection) {
+      const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY - 40; // Вычисляем позицию с отступом
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth" // Плавный скролл
+      });
     }
   });
-
-  faqButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const faqItem = button.closest('.faq__item');
-      const faqBody = faqItem.querySelector('.faq__body');
-      const faqBtn = faqItem.querySelector('.faq__btn');
-
-      faqBodies.forEach((body, index) => {
-        const otherButton = faqButtons[index];
-
-        if (body !== faqBody) {
-          body.style.maxHeight = '0px';
-          body.classList.remove('faq__body--active');
-          otherButton.classList.remove('active');
-          updateTabIndexes(body, true);
-        }
-      });
-
-      if (faqBody.classList.contains('faq__body--active')) {
-        faqBody.style.maxHeight = '0px';
-        faqBody.classList.remove('faq__body--active');
-        faqBtn.classList.remove('active');
-        updateTabIndexes(faqBody, true);
-      } else {
-        faqBody.style.maxHeight = faqBody.scrollHeight + 'px';
-        faqBody.classList.add('faq__body--active');
-        faqBtn.classList.add('active');
-        updateTabIndexes(faqBody, false);
-      }
-    });
-  });
-
-  function updateTabIndexes(container, isHidden) {
-    const focusableElements = container.querySelectorAll('a, button, input, [tabindex]');
-    focusableElements.forEach(el => {
-      if (isHidden) {
-        el.setAttribute('tabindex', '-1');
-      } else {
-        el.removeAttribute('tabindex');
-      }
-    });
-  }
 });

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="html html--min-height" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Duck is the official mascot of Telegram. DuckCoin is a memcoin launched on the TON blockchain">
+  <meta http-equiv="content-type" content="public, max-age=3600">
+  <meta name="theme-color" content="#fff"/>
+  <title>Contact Us</title>
+  <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="body body--height">
+<div class="wrapper">
+  @include('components/_header.html')
+  <main class="main">
+    <section class="contact">
+      <div class="container">
+        <h1 class="contact__title title-section">Contact Us</h1>
+        <form class="contact__form" action="#" method="post">
+          <div class="contact__item">
+            <label class="label" for="email">Enter your email</label>
+            <input class="input" type="email" id="email" name="email" maxlength="255" required placeholder="example@example.com">
+          </div>
+          <div class="contact__item">
+            <label class="label" for="message">Enter your message</label>
+            <textarea class="input input--textarea" id="message" name="message" required placeholder="Enter your message"></textarea>
+          </div>
+          <button class="contact__btn btn" type="submit">Enter message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  @include('components/_footer.html')
+  <div class="modal">
+    <button class="modal__close" type="button">
+      <span class="sr-only">Close modal window</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <img class="modal__img" src="images/okay.svg" width="73" height="73" alt="okay icon">
+    <p class="modal__title">Your message has been successfully sent</p>
+    <p class="modal__text">We appreciate your interest in Token X!</p>
+  </div>
+</div>
+<script src="js/main.min.js" type="module"></script>
+<script src="js/contact.js" type="module"></script>
