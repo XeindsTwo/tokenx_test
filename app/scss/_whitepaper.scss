@@ -1,0 +1,45 @@
+.whitepaper {
+  &__title {
+    font-weight: 700;
+    color: $white;
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    letter-spacing: -1.04px;
+  }
+
+  &__inner {
+    max-width: 735px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    @include flex-column(40);
+  }
+
+  &__item {
+    @include flex-column(16);
+
+    &-text {
+      @include flex-column(16);
+    }
+  }
+
+  &__name {
+    color: $white;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+
+  p {
+    font-weight: 500;
+    line-height: 1.56;
+
+    span {
+      color: $white;
+    }
+  }
+}

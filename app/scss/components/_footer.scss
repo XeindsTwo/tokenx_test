@@ -1,0 +1,134 @@
+.footer {
+  padding-bottom: 45px;
+
+  &__inner {
+    @include flex-between-center-gap(30);
+  }
+
+  &__left, &__right {
+    max-width: 215px;
+    width: 100%;
+  }
+
+  &__left {
+    @include flex-align-center(16);
+  }
+
+  &__logo {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: opacity .4s, border .4s;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &:focus {
+      border-color: $white;
+    }
+  }
+
+  &__line {
+    align-self: stretch;
+    width: 1px;
+    background-color: rgba($white, .2);
+  }
+
+  &__socials {
+    @include flex-align-center(12);
+  }
+
+  &__social {
+    @include flex-center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 1px;
+    transition: border .4s;
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+
+      svg {
+        opacity: 1;
+
+        path {
+          fill: $white;
+        }
+      }
+    }
+
+    svg {
+      opacity: .6;
+    }
+  }
+
+  &__list {
+    @include flex-align-center(24);
+  }
+
+  &__link {
+    @include flex-align-center(7);
+    color: rgba($white, .6);
+    border: 1px solid transparent;
+    padding: 1px 2px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $white;
+
+      svg path {
+        fill-opacity: 1;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+      color: $white;
+
+      svg path {
+        fill: $white;
+        fill-opacity: 1;
+      }
+    }
+
+    &.active {
+      color: $white;
+      pointer-events: none;
+
+      svg path {
+        fill-opacity: 1;
+      }
+    }
+  }
+
+  &__top {
+    @include flex-align-center(8);
+    color: $white;
+    margin-left: auto;
+    font-family: $aeonik;
+    font-weight: 500;
+    max-width: max-content;
+    transition: color .4s;
+
+    &:hover {
+      color: rgba($white, .7);
+
+      svg {
+        transform: translateY(-4px);
+        opacity: .7;
+      }
+    }
+
+    &:focus {
+      color: $accent;
+    }
+  }
+}

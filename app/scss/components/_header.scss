@@ -1,0 +1,66 @@
+.header {
+  padding: 16px 0 70px;
+
+  &__inner {
+    @include flex-between-center-gap(30);
+  }
+
+  &__logo {
+    display: flex;
+
+    a {
+      border: 1px solid transparent;
+      border-radius: 4px;
+      transition: opacity .4s, border .4s;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      &:focus {
+        border-color: $white;
+      }
+    }
+  }
+
+  &__list {
+    @include flex-align-center(24);
+  }
+
+  &__link {
+    @include flex-align-center(7);
+    color: rgba($white, .6);
+    border: 1px solid transparent;
+    padding: 1px 2px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $white;
+
+      svg path {
+        fill-opacity: 1;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+      color: $white;
+
+      svg path {
+        fill: $white;
+        fill-opacity: 1;
+      }
+    }
+
+    &.active {
+      color: $white;
+      pointer-events: none;
+
+      svg path {
+        fill-opacity: 1;
+      }
+    }
+  }
+}

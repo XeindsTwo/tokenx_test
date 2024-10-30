@@ -1,0 +1,49 @@
+.home {
+  &__content {
+    @include flex-between-center-gap(30);
+    margin-bottom: 62px;
+  }
+
+  &__title {
+    font-size: 78px;
+    max-width: 720px;
+    letter-spacing: -1.56px;
+    line-height: 1.05;
+    color: $white;
+    font-family: $aeonik;
+    font-weight: 500;
+  }
+
+  &__right {
+    @include flex-column(30);
+    align-self: stretch;
+    justify-content: space-between;
+    max-width: 435px;
+  }
+
+  &__text {
+    font-size: 20px;
+    letter-spacing: -0.2px;
+    color: rgba($white, .8);
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__item {
+    @include flex-align-center(10);
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 6px;
+    color: $white;
+    background: #161628;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
