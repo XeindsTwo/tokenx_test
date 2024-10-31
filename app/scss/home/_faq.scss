@@ -6,11 +6,42 @@
     text-align: center;
     max-width: 610px;
     margin: 0 auto 64px;
+    @include r($lg) {
+      margin-bottom: 50px;
+    }
+    @include r($tablet) {
+      margin-bottom: 45px;
+    }
+    @include r($phone) {
+      margin-bottom: 35px;
+    }
   }
 
   &__subtext {
     font-size: 18px;
     color: rgba($white, .6);
+    @media (max-width: 540px) {
+      font-size: 16px;
+      max-width: 320px;
+    }
+
+    a {
+      border: 1px solid transparent;
+      border-bottom: 1px solid rgba($white, .6);
+      padding: 1px;
+      transition: color .4s, border-radius .4s, border .4s;
+
+      &:hover {
+        color: $accent;
+        border-bottom-color: $accent;
+      }
+
+      &:focus {
+        border-color: $accent;
+        border-radius: 5px;
+        color: $white;
+      }
+    }
   }
 
   &__list {
@@ -25,6 +56,12 @@
     border-radius: 12px;
     background-color: #161628;
     border: 1px solid transparent;
+    @include r($sm) {
+      padding: 24px 20px;
+    }
+    @include r($phone) {
+      padding: 22px 17px;
+    }
   }
 
   &__body {
@@ -63,6 +100,16 @@
     border: 1px solid transparent;
     border-radius: 50%;
     transition: color .4s, border .4s, transform .4s, background-color .4s;
+    @include r($sm) {
+      right: 20px;
+    }
+    @media (max-width: 540px) {
+      width: 29px;
+      height: 29px;
+    }
+    @include r($phone) {
+      right: 17px;
+    }
 
     &::after, &::before {
       content: " ";
@@ -121,6 +168,12 @@
     max-width: max-content;
     transition: color .4s;
     cursor: pointer;
+    @include r($sm) {
+      font-size: 18px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
 
     &:hover {
       color: $accent;
@@ -133,5 +186,19 @@
     max-width: 680px;
     letter-spacing: -0.18px;
     color: rgba($white, .6);
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+      padding-right: 50px;
+    }
+    @include r($sm) {
+      font-size: 16px;
+    }
+    @media (max-width: 540px) {
+      padding-right: 40px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
   }
 }
