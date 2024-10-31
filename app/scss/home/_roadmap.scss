@@ -3,6 +3,9 @@
     max-width: 420px;
     text-align: center;
     margin: 0 auto 70px;
+    @include r($tablet) {
+      margin-bottom: 55px;
+    }
   }
 
   &__subtext {
@@ -24,6 +27,11 @@
     @include flex-between(30);
     padding-bottom: 40px;
     position: relative;
+    @media (max-width: 640px) {
+      flex-direction: column;
+      gap: 25px;
+      padding-bottom: 55px;
+    }
 
     &:not(:last-child) {
       &::before {
@@ -39,11 +47,17 @@
       &::before {
         top: 8px;
         height: 94%;
+        @media (max-width: 640px) {
+          height: 96%;
+        }
       }
     }
 
     &:nth-child(5)::before {
       height: 108%;
+      @media (max-width: 640px) {
+        height: 105%;
+      }
     }
   }
 
@@ -70,6 +84,9 @@
     display: flex;
     max-width: max-content;
     align-self: flex-start;
+    @include r($phone) {
+      font-size: 17px;
+    }
 
     &.here {
       padding: 7px 12px;
@@ -85,6 +102,9 @@
     gap: 8px;
     flex-wrap: wrap;
     max-width: 430px;
+    @media (max-width: 640px) {
+      margin-left: 16px;
+    }
   }
 
   &__plan {
@@ -94,5 +114,11 @@
     border: 1px solid rgba($white, .15);
     font-size: 16px;
     color: $white;
+    @media (max-width: 640px) {
+      gap: 7px;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
   }
 }

@@ -75,9 +75,6 @@
   @include r($lg) {
     margin-top: 90px;
   }
-  @include r($sm) {
-    margin-top: 80px;
-  }
 }
 
 .sr-only {

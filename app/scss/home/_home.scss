@@ -2,6 +2,14 @@
   &__content {
     @include flex-between-center-gap(30);
     margin-bottom: 62px;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 52px;
+    }
+    @include r($sm) {
+      margin-bottom: 42px;
+    }
   }
 
   &__title {
@@ -12,6 +20,51 @@
     color: $white;
     font-family: $aeonik;
     font-weight: 500;
+    @media (max-width: 1280px) {
+      font-size: 72px;
+      max-width: 670px;
+    }
+    @include r($desktop) {
+      font-size: 68px;
+    }
+    @media (max-width: 1170px) {
+      font-size: 64px;
+      max-width: 580px;
+    }
+    @media (max-width: 1100px) {
+      max-width: 100%;
+      font-size: 62px;
+      letter-spacing: -1.1px;
+    }
+    @include r($lg) {
+      font-size: 56px;
+    }
+    @include r($tablet) {
+      font-size: 52px;
+    }
+    @media (max-width: 710px) {
+      font-size: 48px;
+      letter-spacing: -0.5px;
+    }
+    @media (max-width: 650px) {
+      font-size: 44px;
+      line-height: 1.1;
+    }
+    @media (max-width: 510px) {
+      font-size: 40px;
+    }
+    @include r($phone) {
+      font-size: 38px;
+    }
+    @media (max-width: 435px) {
+      font-size: 36px;
+    }
+    @media (max-width: 390px) {
+      font-size: 34px;
+    }
+    @media (max-width: 360px) {
+      font-size: 32px;
+    }
   }
 
   &__right {
@@ -19,12 +72,25 @@
     align-self: stretch;
     justify-content: space-between;
     max-width: 435px;
+    @include r($desktop) {
+      max-width: 420px;
+    }
+    @media (max-width: 1100px) {
+      gap: 20px;
+    }
   }
 
   &__text {
     font-size: 20px;
     letter-spacing: -0.2px;
     color: rgba($white, .8);
+    @media (max-width: 840px) {
+      font-size: 18px;
+      max-width: 390px;
+    }
+    @media (max-width: 430px) {
+      font-size: 17px;
+    }
   }
 
   &__items {
@@ -32,6 +98,9 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
+    @include r($desktop) {
+      gap: 9px;
+    }
   }
 
   &__item {
@@ -41,10 +110,21 @@
     border-radius: 6px;
     color: $white;
     background: #161628;
+    @include r($phone) {
+      font-size: 15px;
+    }
   }
 
   &__img {
     @include objectCoverBg;
     width: 100%;
+    border-radius: 8px;
+    @media (max-width: 1340px) {
+      height: auto;
+    }
+    @include r($phone) {
+      height: 280px;
+      object-position: left;
+    }
   }
 }
