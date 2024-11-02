@@ -73,7 +73,7 @@
     justify-content: space-between;
     max-width: 435px;
     @include r($desktop) {
-      max-width: 420px;
+      max-width: 430px;
     }
     @media (max-width: 1100px) {
       gap: 20px;
@@ -104,14 +104,29 @@
   }
 
   &__item {
-    @include flex-align-center(10);
-    padding: 10px 18px;
-    font-size: 16px;
-    border-radius: 6px;
-    color: $white;
-    background: #161628;
-    @include r($phone) {
-      font-size: 15px;
+    a {
+      @include flex-align-center(10);
+      padding: 10px 18px;
+      font-size: 16px;
+      border-radius: 6px;
+      color: $white;
+      background: #161628;
+      border: 1px solid transparent;
+      transition: background-color .4s, border .4s, color .4s;
+      @include r($phone) {
+        font-size: 15px;
+      }
+
+      &:hover {
+        background-color: transparent;
+        border-color: rgba($accent, .8);
+      }
+
+      &:focus {
+        background-color: rgba($accent, .4);
+        color: $white;
+        border-color: transparent;
+      }
     }
   }
 
